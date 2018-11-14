@@ -31,6 +31,9 @@ public $params = [];
 
       $this->controllerName = array_shift($filteredPackets);
       $this->methodName = array_shift($filteredPackets);
+      if($this->methodName == ""){
+        $this->methodName == "defaultMethod";
+      }
       $this->params = $filteredPackets;
 
       $controllerFile = ucfirst($this->controllerName) . ".php";
@@ -51,19 +54,32 @@ public $params = [];
 			$this->methodName = "showHomePage";
 		}
 
-		if (!file_exists($controllerFilePath))
+		if (file_exists($controllerFilePath))
 		{
-			$controllerFilePath = "Controller/Error.php";
-			$this->controllerName = "Error";
-			$this->methodName = "showErrorPage";
-		}
 
-    include $controllerFilePath;
-    $controller = new $this->controllerName();
+      include $controllerFilePath;
+      $controller = new $this->controllerName();
+
+      $method = $this->methodName;
+
+      if(method_exists($controller,$method))
+      {
+        $controller->$method($this->params);
+      }else{
+        $controller->defaultMethod();
+
+      }
 
 
-    $method = $this->methodName;
-    $controller->$method($this->params);
+
+		}else{
+      $controllerFilePath = "Controller/Error.php";
+      $this->controllerName = "Error";
+      $this->methodName = "showErrorPage";
+
+    }
+
+
   }
 
 }

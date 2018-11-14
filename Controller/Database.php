@@ -10,7 +10,7 @@ class Database
   {
 
   }
-  public function echo($params)
+  public function echo1($params)
   {
     var_dump($params);
 

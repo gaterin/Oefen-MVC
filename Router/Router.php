@@ -44,12 +44,26 @@ public $params = [];
 
   public function sendToDestination($controllerFilePath)
   {
-      include $controllerFilePath;
-      $controller = new $this->controllerName();
-      $method = $this->methodName;
-      $controller->$method($this->params);
+		if ($controllerFilePath == "Controller/.php")
+		{
+			$controllerFilePath = "Controller/Home.php";
+			$this->controllerName = "Home";
+			$this->methodName = "showHomePage";
+		}
+
+		if (!file_exists($controllerFilePath))
+		{
+			$controllerFilePath = "Controller/Error.php";
+			$this->controllerName = "Error";
+			$this->methodName = "showErrorPage";
+		}
+
+    include $controllerFilePath;
+    $controller = new $this->controllerName();
 
 
+    $method = $this->methodName;
+    $controller->$method($this->params);
   }
 
 }

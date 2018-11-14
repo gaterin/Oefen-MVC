@@ -12,7 +12,8 @@ class Router
   {
     $url = $_SERVER['REQUEST_URI'];
     $filteredInput = explode("/", $url);
-    echo $filteredInput;
+    echo "<pre>";
+    var_dump($filteredInput);
 
   }
 }

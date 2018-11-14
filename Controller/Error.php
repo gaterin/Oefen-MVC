@@ -2,14 +2,11 @@
 /**
  *
  */
-class Error
+class Error extends MainController
 {
 
 
-  function __construct()
-  {
-
-  }
+  function __construct(){}
 
   public function showErrorPage()
   {

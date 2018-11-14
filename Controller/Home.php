@@ -2,7 +2,7 @@
 /**
  *
  */
-class Home
+class Home extends MainController
 {
 
 	function __construct()
@@ -15,10 +15,7 @@ class Home
     include("View/Home.php");
   }
 
-	public function defaultMethod()
-	{
-		include("View/Home.php");
-	}
+
 
 
 

@@ -3,7 +3,7 @@
 /**
  *
  */
-class Database
+class Database extends MainController
 {
 
   function __construct()
@@ -15,6 +15,7 @@ class Database
     var_dump($params);
 
   }
+
 
 }
 

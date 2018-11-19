@@ -1,8 +1,13 @@
 <?php
 
 /**
+ * Router class to direct user to requested page depended on the url
+ *
+ *
  *
  */
+
+
 class Router
 {
 
@@ -19,6 +24,11 @@ private $params = [];
     $this->sendToDestination($controllerFilePath);
   }
 
+	/**
+	 * [filter url to array based on "/"]
+	 * @param  [string] $packets [description]
+	 * @return [array]          [description]
+	 */
   private function filterInput($packets)
   {
     $explodedPackets = explode("/", $packets);

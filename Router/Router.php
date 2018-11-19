@@ -37,6 +37,7 @@ public $params = [];
       $controllerFile = ucfirst($this->controllerName) . ".php";
       $controllerFilePath = "Controller/". $controllerFile;
 
+      var_dump($controllerFilePath);
       return $controllerFilePath;
 
 
@@ -45,9 +46,9 @@ public $params = [];
 
   public function sendToDestination($controllerFilePath)
   {
-		if ($controllerFilePath == "Controller/.php")
+		if ($controllerFilePath == "Controller/.php" || $controllerFilePath == "")
 		{
-			$this->sendToHome();
+			$this->sendToPage("Home.php","Home","showHomePage");
 		}
 
 		if (!file_exists($controllerFilePath))
@@ -67,7 +68,7 @@ public $params = [];
 		}
     else
     {
-      $this->sendToError();
+      $this->sendToPage("Error.php","Error","showErrorPage");
     }
 
 		include $controllerFilePath;
@@ -76,25 +77,18 @@ public $params = [];
 		$controller->$method($this->params);
   }
 
-  public function sendToHome()
+  public function sendToPage($filePath, $controller,$method)
   {
-		$controllerFilePath = "Controller/Home.php";
-		$this->controllerName = "Home";
-		$this->methodName = "showHomePage";
+		$controllerFilePath = "Controller/Error.php";
+		$this->controllerName = $controller;
+		$this->methodName = $method;
 		include $controllerFilePath;
 		$controller = new $this->controllerName();
 		$controller->$methodName($this->params);
   }
 
-  public function sendToError()
-  {
-    $controllerFilePath = "Controller/Error.php";
-    $this->controllerName = "Error";
-    $this->methodName = "showErrorPage";
-		include $controllerFilePath;
-		$controller = new $this->controllerName();
-		$controller->$methodName($this->params);
-  }
+
+
 
 
 

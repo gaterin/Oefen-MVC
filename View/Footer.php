@@ -1,7 +1,8 @@
-<?php
-?>
 <div class="row">
   <div class="col-12">
-    <h1>HomePage</h1>
+    <h1>Footer</h1>
   </div>
 </div>
+
+</body>
+</html>

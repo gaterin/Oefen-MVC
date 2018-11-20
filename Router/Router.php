@@ -28,8 +28,9 @@ private $params = [];
   }
 
 	/**
-	 * [Get url from param and return it as usable array ]
+	 * [Get url from param and return it as usable array]
 	 * @param  [string] $packets [The complete url]
+	 * @var    [array] $explodedPackets [chops the url into pieces with slash as seperator]
 	 * @return [array]          [The exploded array with the controllerName/method/params]
 	 */
   private function filterInput($packets)
@@ -47,17 +48,15 @@ private $params = [];
    */
   private function determineDestination($filteredPackets)
   {
+    $this->controllerName = array_shift($filteredPackets);
+    $this->methodName = array_shift($filteredPackets);
 
-      $this->controllerName = array_shift($filteredPackets);
-      $this->methodName = array_shift($filteredPackets);
+    $this->params = $filteredPackets;
 
-      $this->params = $filteredPackets;
+    $controllerFile = ucfirst($this->controllerName) . ".php";
+    $controllerFilePath = "Controller/". $controllerFile;
 
-      $controllerFile = ucfirst($this->controllerName) . ".php";
-      $controllerFilePath = "Controller/". $controllerFile;
-
-      return $this->controllerFilePathExists($controllerFilePath);
-
+    return $this->controllerFilePathExists($controllerFilePath);
   }
 
 /**

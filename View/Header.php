@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8">
     <link type="text/css" rel="stylesheet" href="../Style/GridStyle.css">
-    <!-- <link type="text/css" rel="stylesheet" href="Style/GridStyle.css"> -->
+    <link type="text/css" rel="stylesheet" href="Style/GridStyle.css">
 
     <link type="text/css" rel="stylesheet" href="../Style/MainStyle.css">
-    <!-- <link type="text/css" rel="stylesheet" href="Style/MainStyle.css"> -->
+    <link type="text/css" rel="stylesheet" href="Style/MainStyle.css">
 
     <link type="text/css" rel="stylesheet" href="../Style/HeaderStyle.css">
-    <!-- <link type="text/css" rel="stylesheet" href="Style/HeaderStyle.css"> -->
+    <link type="text/css" rel="stylesheet" href="Style/HeaderStyle.css">
 
     <link type="text/css" rel="stylesheet" href="../Style/FooterStyle.css">
-    <!-- <link type="text/css" rel="stylesheet" href="Style/FooterStyle.css"> -->
+    <link type="text/css" rel="stylesheet" href="Style/FooterStyle.css">
     <title></title>
   </head>
   <body>

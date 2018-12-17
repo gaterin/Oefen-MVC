@@ -10,7 +10,7 @@ class Home extends MainController
 
 	}
 
-	public function showHomePage()
+	public function showHome()
   {
     include("View/Home.php");
   }

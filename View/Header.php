@@ -25,10 +25,10 @@
           <h1>ToolsForEver</h1>
           <div class="row">
             <nav class="col-12 navBar">
-              <li class="col-3 navButtons" onclick="location.href='../Home/showHomePage' ">Home</li>
-              <li class="col-3 navButtons" onclick="location.href='../ErrorPage/showErrorPage' ">Bioscopen</li>
-              <li class="col-3 navButtons" onclick="location.href=''">Contact</li>
-              <li class="col-3 navButtons" onclick="location.href=''">Inlog</li>
+              <li class="col-3 navButtons" onclick="location.href='../Home/showHome' ">Home</li>
+              <li class="col-3 navButtons" onclick="location.href='../Producten/showProducten' ">Producten</li>
+              <li class="col-3 navButtons" onclick="location.href='../Voorraad/showVoorraad' ">Voorraad</li>
+              <li class="col-3 navButtons" onclick="location.href='../Contact/showContact' ">Contact</li>
             </nav>
           </div>
         </div>

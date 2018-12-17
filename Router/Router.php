@@ -72,11 +72,24 @@ private $params = [];
     if (!file_exists($controllerFilePath))
     {
       $this->controllerName = "Home";
-      $this->methodName = "showHomePage";
+      $this->methodName = "showHome";
       $controllerFilePath = "Controller/Home.php";
     }
     return $controllerFilePath;
   }
+
+  private function controllerMethodExists($controllerFilePath)
+  {
+    if (!file_exists($controllerFilePath))
+    {
+      $this->controllerName = "Home";
+      $this->methodName = "showHome";
+      $controllerFilePath = "Controller/Home.php";
+    }
+    return $controllerFilePath;
+  }
+
+
 
   /**
    * [Final step of router class]

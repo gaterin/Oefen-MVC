@@ -75,18 +75,20 @@ private $params = [];
       $this->methodName = "showHome";
       $controllerFilePath = "Controller/Home.php";
     }
+
     return $controllerFilePath;
   }
 
-  private function controllerMethodExists($controllerFilePath)
+  private function controllerMethodExists($controller,$methodName)
   {
-    if (!file_exists($controllerFilePath))
-    {
-      $this->controllerName = "Home";
-      $this->methodName = "showHome";
-      $controllerFilePath = "Controller/Home.php";
-    }
-    return $controllerFilePath;
+    var_dump($methodName,$controller);
+    // if (!method_exists($controller,$methodName))
+    // {
+    //   $this->controllerName = "Home";
+    //   $this->methodName = "showHome";
+    //   $controllerFilePath = "Controller/Home.php";
+    // }
+    return $this->methodName;
   }
 
 
@@ -102,7 +104,9 @@ private $params = [];
 
 		include $controllerFilePath;
 		$controller = new $this->controllerName();
-		$method = $this->methodName;
+    // $method = $this->controllerMethodExists($controller,$this->methodName);
+    $method = $this->methodName;
+    var_dump($method,$controllerFilePath);
 		$controller->$method($this->params);
 
   }

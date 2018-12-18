@@ -17,7 +17,8 @@ class MainModel
     $sql = 'SELECT * FROM products';
     $pdo = $this->conn;
     // $fetchedData = $pdo->query()
-    foreach ($pdo->query($sql) as $row) {
+    foreach ($pdo->query($sql) as $row)
+    {
         print $row['id'] . "\t";
         print $row['name'] . "\t";
         print $row['price'] . "\n";

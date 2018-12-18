@@ -3,10 +3,10 @@
 /**
  *
  */
-class Products extends MainModel
+class Products
 {
 
-  
+
 }
 
 

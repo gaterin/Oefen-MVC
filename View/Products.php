@@ -1,16 +1,7 @@
-<table>
-  <th>
-<td>ID</td>
-<td>Name</td>
-<td>Price</td>
-
-  </th>
-
 <?php
-
-foreach ($variable as $row) {
-  // code...
-}
-
- ?>
-</table>
+?>
+<div class="row">
+  <div class="col-12">
+    <h1>ProductsPage</h1>
+  </div>
+</div>

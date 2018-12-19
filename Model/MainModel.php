@@ -11,18 +11,18 @@ class MainModel
   private $fetchedData;
   private $sql;
 
-  function __construct($configdsn,$configuser,$configpass)
+  function __construct()
   {
-    $this->conn = new PDO($configdsn,$configuser,$configpass);
-    $sql = 'SELECT * FROM products';
+    $this->conn = new PDO(DSN,USER,PASS);
+
     $pdo = $this->conn;
     // $fetchedData = $pdo->query()
-    foreach ($pdo->query($sql) as $row)
-    {
-        print $row['id'] . "\t";
-        print $row['name'] . "\t";
-        print $row['price'] . "\n";
-    }
+    // foreach ($pdo->query($sql) as $row)
+    // {
+    //     print $row['id'] . "\t";
+    //     print $row['name'] . "\t";
+    //     print $row['price'] . "\n";
+    // }
   }
 
 

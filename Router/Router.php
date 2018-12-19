@@ -81,7 +81,7 @@ private $params = [];
 
   private function controllerMethodExists($controller,$methodName)
   {
-    var_dump($methodName,$controller);
+    // var_dump($methodName,$controller);
     // if (!method_exists($controller,$methodName))
     // {
     //   $this->controllerName = "Home";

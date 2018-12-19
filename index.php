@@ -1,4 +1,5 @@
 <?php
+require_once 'Assets/GlobalFunctions.php';
 require_once 'Controller/MainController.php';
 require_once 'Model/MainModel.php';
 require_once 'Model/Products.php';

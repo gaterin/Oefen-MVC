@@ -26,7 +26,7 @@
           <div class="row">
             <nav class="col-12 navBar">
               <li class="col-3 navButtons" onclick="location.href='../Home/showHome' ">Home</li>
-              <li class="col-3 navButtons" onclick="location.href='../Products/showProducts' ">Producten</li>
+              <li class="col-3 navButtons" onclick="location.href='../ProductsController/showProducts' ">Producten</li>
               <li class="col-3 navButtons" onclick="location.href='' ">Voorraad</li>
               <li class="col-3 navButtons" onclick="location.href='' ">Contact</li>
             </nav>

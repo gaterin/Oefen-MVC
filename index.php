@@ -1,10 +1,10 @@
 <?php
-require_once 'Assets/GlobalFunctions.php';
-require_once 'Controller/MainController.php';
-require_once 'Model/MainModel.php';
-require_once 'Model/Products.php';
-require_once 'Router/Router.php';
-require_once 'config.php';
+require 'Assets/GlobalFunctions.php';
+require 'Controller/MainController.php';
+require 'Model/MainModel.php';
+require 'Model/Products.php';
+require 'Router/Router.php';
+require 'config.php';
 
 
 // echo "<pre>";
@@ -15,9 +15,9 @@ require_once 'config.php';
 
 // $model = new MainModel(DSN,USER,PASS);
 
-include "View/Header.php";
+include_once "View/Header.php";
 $router = new Router();
-include "View/Footer.php";
+include_once "View/Footer.php";
 
 
  ?>

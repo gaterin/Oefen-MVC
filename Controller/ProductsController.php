@@ -15,7 +15,7 @@ class ProductsController extends MainController
   {
     $model = $this->model;
     $products = $model->getAll();
-    loadView('Products', ['products' => $products,]);
+    loadView('Products', ['products' => $products]);
   }
 
 }

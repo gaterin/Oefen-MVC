@@ -1,4 +1,22 @@
 body{
+
+  color: #cccccc;
+  text-align: center !important;
+  font-family: 'Roboto', sans-serif !important;
+  width:1080px;
+  height: 1920px;
+  margin:auto;
+  border-right: black 1px solid;
+  border-left: black 1px solid;
+  background-color:rgba(0, 0, 0, 0.8);
+}
+html{
   background-color: yellow;
-  color: black;
+}
+a{
+  color: #cccccc;
+  text-decoration: none;
+}
+table{
+  margin: auto;
 }

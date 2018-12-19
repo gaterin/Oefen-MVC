@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link type="text/css" href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="../Style/GridStyle.css">
     <!-- <link type="text/css" rel="stylesheet" href="Style/GridStyle.css"> -->
 

@@ -104,9 +104,9 @@ private $params = [];
 
 		include $controllerFilePath;
 		$controller = new $this->controllerName();
-    // $method = $this->controllerMethodExists($controller,$this->methodName);
+     $method = $this->controllerMethodExists($controller,$this->methodName);
     $method = $this->methodName;
-    var_dump($method,$controllerFilePath);
+    // var_dump($method,$controllerFilePath);
 		$controller->$method($this->params);
 
   }

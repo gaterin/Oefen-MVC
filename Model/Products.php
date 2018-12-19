@@ -24,6 +24,21 @@ class Products
     return $result;
   }
 
+  public function addProduct(){
+
+    $productName = $_POST["name"];
+    $productPrice = $_POST["price"];
+
+    $sql = "INSERT INTO `products` (`id`,`name`, `price`)
+VALUES (null,'$productName', '$productPrice')";
+var_dump($sql);
+    $pdo = $this->conn;
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $result = true;
+    return $result;
+  }
+
 }
 
 

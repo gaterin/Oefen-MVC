@@ -17,6 +17,8 @@ a{
   color: #cccccc;
   text-decoration: none;
 }
-table{
+table , td{
   margin: auto;
+  border: 1px solid #CCCCCC;
+  border-collapse: collapse;
 }

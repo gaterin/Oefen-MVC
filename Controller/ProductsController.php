@@ -3,12 +3,13 @@
 /**
  *
  */
-class ProductsController extends MainController
+class ProductsController
 {
+  public $model;
 
   function __construct()
   {
-    parent::__construct(DSN,USER,PASS);
+    $this->model = new Products(DSN,USER,PASS);
   }
 
   public function showProducts()
@@ -16,6 +17,13 @@ class ProductsController extends MainController
     $model = $this->model;
     $products = $model->getAll();
     loadView('Products', ['products' => $products]);
+  }
+
+  public function addProduct()
+  {
+    $model = $this->model;
+    $products = $model->addProduct();
+header("Location: http://localhost/php/Oefen-mvc/ProductsController/showProducts");
   }
 
 }

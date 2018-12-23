@@ -10,8 +10,8 @@
 
 
   <form class="col-12" action="../ProductsController/addProduct" method="post">
-  <input class="col-3" name="name" placeholder="Name">
-  <input class="col-3" name="price" placeholder="Price">
+  <input class="col-3" name="name" placeholder="Name" required>
+  <input class="col-3" name="price" placeholder="Price" required>
   <input type="submit" value="Send!">
 </form>
 

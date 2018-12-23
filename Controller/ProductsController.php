@@ -23,7 +23,8 @@ class ProductsController
   {
     $model = $this->model;
     $products = $model->addProduct();
-header("Location: http://localhost/php/Oefen-mvc/ProductsController/showProducts");
+    $this->showProducts();
+    // header("Location: http://localhost/php/Oefen-mvc/ProductsController/showProducts");
   }
 
 }

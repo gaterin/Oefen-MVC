@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link type="text/css" href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <base href="http://localhost/php/Oefen-MVC/" />
+    <base href="http://localhost/php/Oefen-MVC/"/>
     <link type="text/css" rel="stylesheet" href="./Style/GridStyle.css">
     <link type="text/css" rel="stylesheet" href="./Style/MainStyle.css">
     <link type="text/css" rel="stylesheet" href="./Style/HeaderStyle.css">

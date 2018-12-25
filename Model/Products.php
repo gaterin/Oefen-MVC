@@ -15,7 +15,8 @@ class Products
     $pdo = $this->conn;
   }
 
-  public function getAll(){
+  public function getAll()
+  {
     $sql = 'SELECT * FROM products';
     $pdo = $this->conn;
     $stmt = $pdo->prepare($sql);
@@ -24,21 +25,27 @@ class Products
     return $result;
   }
 
-  public function addProduct(){
+  public function addProduct()
+  {
 
     $productName = $_POST["name"];
     $productPrice = $_POST["price"];
 
-    $sql = "INSERT INTO `products` (`id`,`name`, `price`)
-VALUES (null,'$productName', '$productPrice')";
-var_dump($sql);
+    $sql = "INSERT INTO `products` (`id`,`name`, `price`) VALUES (null,'$productName', '$productPrice')";
+    var_dump($sql);
     $pdo = $this->conn;
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
-    $result = true;
-    return $result;
   }
 
+  public function deleteProduct($productId)
+  {
+    $sql = "DELETE FROM `products` WHERE `id`='$productId'";
+    var_dump($sql);
+    $pdo = $this->conn;
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+  }
 }
 
 

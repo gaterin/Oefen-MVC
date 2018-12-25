@@ -23,12 +23,15 @@ class ProductsController
   {
     $model = $this->model;
     $products = $model->addProduct();
-    $this->showProducts();
-    // header("Location: http://localhost/php/Oefen-mvc/ProductsController/showProducts");
+    header( 'Location: ../ProductsController/showProducts');
+
   }
 
+  public function deleteProduct($productId)
+  {
+    $model = $this->model;
+    $products = $model->deleteProduct($productId);
+    header( 'Location: ../showProducts');
+  }
 }
-
-
-
  ?>

@@ -27,9 +27,6 @@
 <div class="col-3">
 
 </div>
-
-
-
   <table class="col-12">
     <tr class="productsTableHeader col-12">
       <td class="col-2">ID</td>
@@ -40,13 +37,14 @@
 
   <?php
 
-  foreach ($products as $row) {
+  foreach ($products as $row) 
+  {
     echo "<tr class='col-12'>";
     echo "<td class='col-2'>" . $row->id . "</td>";
     echo "<td class='col-2'>" . $row->name  . "</td>";
     echo "<td class='col-2'>€ " . str_replace('.', ',', $row->price)  . "</td>";
     echo "<td class='col-2'><a href='../ProductsController/editProduct/".$row->id." '>Edit</a></td>";
-    echo "<td class='col-2'><a href='../ProductsController/deleteProduct'>Delete</a></td>";
+    echo "<td class='col-2'><a href='../ProductsController/deleteProduct/".$row->id."'>Delete</a></td>";
     echo "</tr>";
   }
 

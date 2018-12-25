@@ -51,7 +51,7 @@ private $params = [];
     $this->controllerName = array_shift($filteredPackets);
     $this->methodName = array_shift($filteredPackets);
 
-    $this->params = $filteredPackets;
+    $this->params = implode(",",$filteredPackets);
 
     $controllerFile = ucfirst($this->controllerName) . ".php";
     $controllerFilePath = "Controller/". $controllerFile;
@@ -101,14 +101,12 @@ private $params = [];
    */
   private function sendToDestination($controllerFilePath)
   {
-
 		include $controllerFilePath;
 		$controller = new $this->controllerName();
-     $method = $this->controllerMethodExists($controller,$this->methodName);
+    $method = $this->controllerMethodExists($controller,$this->methodName);
     $method = $this->methodName;
     // var_dump($method,$controllerFilePath);
 		$controller->$method($this->params);
-
   }
 
 

@@ -23,15 +23,26 @@ class ProductsController
   {
     $model = $this->model;
     $products = $model->addProduct();
-    header( 'Location: ../ProductsController/showProducts');
+    $this->showProducts();
+  }
 
+  public function loadEditProduct($productId)
+  {
+    include_once './View/EditProduct.php';
+  }
+
+  public function editProduct()
+  {
+    $model = $this->model;
+    $products = $model->editProduct();
+    $this->showProducts();
   }
 
   public function deleteProduct($productId)
   {
     $model = $this->model;
     $products = $model->deleteProduct($productId);
-    header( 'Location: ../showProducts');
+    $this->showProducts();
   }
 }
  ?>

@@ -38,6 +38,19 @@ class Products
     $stmt->execute();
   }
 
+  public function editProduct()
+  {
+    $productId = $_POST["id"];
+    $productName = $_POST["name"];
+    $productPrice = $_POST["price"];
+
+    $sql = "UPDATE `products` SET `name`='$productName' , `price`='$productPrice' WHERE `id`='$productId'";
+    var_dump($sql);
+    $pdo = $this->conn;
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+  }
+
   public function deleteProduct($productId)
   {
     $sql = "DELETE FROM `products` WHERE `id`='$productId'";

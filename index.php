@@ -4,6 +4,7 @@ require 'Controller/MainController.php';
 require 'Model/MainModel.php';
 require 'Model/Products.php';
 require 'Model/Stock.php';
+require 'Model/Locations.php';
 require 'Router/Router.php';
 require 'config.php';
 

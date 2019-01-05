@@ -21,14 +21,14 @@
           <div class="row">
             <nav class="col-12 navBar">
               <li class="col-3 navButtons" onclick="location.href='./Home/showHome' ">Home</li>
-              <li class="col-3 navButtons" onclick="location.href='./ProductsController/showProducts' ">Producten</li>
-              <li class="col-3 navButtons" onclick="location.href='./StockController/showStock' ">Voorraad</li>
-              <li class="col-3 navButtons" onclick="location.href='' ">Contact</li>
+              <li class="col-3 navButtons" onclick="location.href='./ProductsController/showProducts' ">Products</li>
+              <li class="col-3 navButtons" onclick="location.href='./StockController/showStock' ">Stock</li>
+              <li class="col-3 navButtons" onclick="location.href='./LocationsController/showLocations' ">Locations</li>
             </nav>
           </div>
         </div>
         <div class="col-2">
-          <h1>Inlog</h1>
+          <h1>Login</h1>
         </div>
 
       </div>

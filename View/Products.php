@@ -22,7 +22,7 @@
 </div>
   <table class="col-12">
     <tr class="productsTableHeader col-12">
-      <td class="col-2">ID</td>
+      <td class="col-2">Product ID</td>
       <td class="col-2">Name</td>
       <td class="col-2">Price</td>
 
@@ -33,11 +33,11 @@
   foreach ($products as $row)
   {
     echo "<tr class='col-12'>";
-    echo "<td class='col-2'>" . $row->id . "</td>";
+    echo "<td class='col-2'>" . $row->productId . "</td>";
     echo "<td class='col-2'>" . $row->name  . "</td>";
     echo "<td class='col-2'>€ " . str_replace('.', ',', $row->price)  . "</td>";
-    echo "<td class='col-2'><a href='./ProductsController/loadEditProduct/".$row->id." '>Edit</a></td>";
-    echo "<td class='col-2'><a href='./ProductsController/deleteProduct/".$row->id."'>Delete</a></td>";
+    echo "<td class='col-2'><a href='./ProductsController/loadEditProduct/".$row->productId." '>Edit</a></td>";
+    echo "<td class='col-2'><a href='./ProductsController/deleteProduct/".$row->productId."'>Delete</a></td>";
     echo "</tr>";
   }
 

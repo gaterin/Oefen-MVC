@@ -17,7 +17,7 @@ class Stock
 
   public function getAll()
   {
-    $sql = 'SELECT * FROM products';
+    $sql = 'SELECT * FROM stock NATURAL JOIN products NATURAL JOIN locations';
     $pdo = $this->conn;
     $stmt = $pdo->prepare($sql);
     $stmt->execute();

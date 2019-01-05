@@ -34,8 +34,8 @@
   {
     echo "<tr class='col-12'>";
     echo "<td class='col-2'>" . $row->productId . "</td>";
-    echo "<td class='col-2'>" . $row->name  . "</td>";
-    echo "<td class='col-2'>€ " . str_replace('.', ',', $row->price)  . "</td>";
+    echo "<td class='col-2'>" . $row->productName  . "</td>";
+    echo "<td class='col-2'>€ " . str_replace('.', ',', $row->productPrice)  . "</td>";
     echo "<td class='col-2'><a href='./ProductsController/loadEditProduct/".$row->productId." '>Edit</a></td>";
     echo "<td class='col-2'><a href='./ProductsController/deleteProduct/".$row->productId."'>Delete</a></td>";
     echo "</tr>";

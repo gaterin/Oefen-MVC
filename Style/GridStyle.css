@@ -31,7 +31,7 @@
 [class*="col-"] {
     float: left;
     padding: 15px;
-    /* border: 1px solid blue; */
+    border: 1px solid blue;
 }
 /* all first-child-elements with attribute:{class="row"} */
 .row::after {

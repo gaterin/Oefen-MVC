@@ -28,11 +28,11 @@ class Products
   public function addProduct()
   {
 
-    $productName = $_POST["name"];
-    $productPrice = $_POST["price"];
+    $productName = $_POST["productName"];
+    $productPrice = $_POST["productPrice"];
 
-    $sql = "INSERT INTO `products` (`id`,`name`, `price`) VALUES (null,'$productName', '$productPrice')";
-    var_dump($sql);
+    $sql = "INSERT INTO `products` (`productId`,`productName`, `productPrice`) VALUES (null,'$productName', '$productPrice')";
+    // var_dump($sql);
     $pdo = $this->conn;
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
@@ -40,12 +40,12 @@ class Products
 
   public function editProduct()
   {
-    $productId = $_POST["id"];
-    $productName = $_POST["name"];
-    $productPrice = $_POST["price"];
+    $productId = $_POST["productId"];
+    $productName = $_POST["productName"];
+    $productPrice = $_POST["productPrice"];
 
-    $sql = "UPDATE `products` SET `name`='$productName' , `price`='$productPrice' WHERE `id`='$productId'";
-    var_dump($sql);
+    $sql = "UPDATE `products` SET `productName`='$productName' , `productPrice`='$productPrice' WHERE `productId`='$productId'";
+    // var_dump($sql);
     $pdo = $this->conn;
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
@@ -53,8 +53,8 @@ class Products
 
   public function deleteProduct($productId)
   {
-    $sql = "DELETE FROM `products` WHERE `id`='$productId'";
-    var_dump($sql);
+    $sql = "DELETE FROM `products` WHERE `productId`='$productId'";
+    // var_dump($sql);
     $pdo = $this->conn;
     $stmt = $pdo->prepare($sql);
     $stmt->execute();

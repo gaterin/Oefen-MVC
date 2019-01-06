@@ -19,8 +19,7 @@
       <td class="col-2">Product Name</td>
       <td class="col-2">Stock Location</td>
       <td class="col-2">Stock</td>
-
-
+      
     </tr>
 
 <?php

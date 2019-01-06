@@ -7,9 +7,10 @@
   </div>
 
   <form class="col-12" action="./ProductsController/addProduct" method="post">
-  <input class="col-3" name="name" placeholder="Name" required>
-  <input class="col-3" name="price" placeholder="Price" required>
-  <input type="submit" value="Send!">
+  <h2>Add a product</h2>
+  <input class="col-3" name="productName" placeholder="Enter Product Name" required>
+  <input class="col-3" name="productPrice" placeholder="Enter Product Price" required>
+  <input class="col-3 addSubmit" type="submit" value="Add product!">
 </form>
 
   <div class="col-3">

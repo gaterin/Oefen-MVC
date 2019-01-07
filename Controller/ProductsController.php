@@ -44,5 +44,12 @@ class ProductsController
     $products = $model->deleteProduct($productId);
     $this->showProducts();
   }
+
+  public function searchProduct(){
+
+    $model = $this->model;
+    $products = $model->getSearchedProduct();
+    loadView('Products', ['products' => $products]);
+  }
 }
  ?>

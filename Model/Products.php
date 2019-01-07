@@ -24,7 +24,16 @@ class Products
     $result = $stmt->fetchAll(PDO::FETCH_OBJ);
     return $result;
   }
-
+  public function getSearchedProduct(){
+    $keyword = $_POST["productName"];
+    $sql = "SELECT  *  FROM products WHERE `productName` LIKE '%$keyword%' ";
+      var_dump($sql);
+    $pdo = $this->conn;
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+    return $result;
+  }
   public function addProduct()
   {
 

@@ -21,6 +21,14 @@
 </div>
 <div class="col-3">
 </div>
+<form class="col-12" action="./ProductsController/searchProduct" method="post">
+<h2>Search a product</h2>
+<input class="col-6" name="productName" placeholder="Enter Product Name" >
+<div class="col-3">
+</div>
+<input class="col-3 addSubmit" type="submit" value="Search product!">
+</form>
+
   <table class="col-12">
     <tr class="productsTableHeader col-12">
       <td class="col-2">Product ID</td>
@@ -30,6 +38,7 @@
     </tr>
 
 <?php
+
 
   foreach ($products as $row)
   {

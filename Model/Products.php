@@ -27,7 +27,7 @@ class Products
   public function getSearchedProduct(){
     $keyword = $_POST["productName"];
     $sql = "SELECT  *  FROM products WHERE `productName` LIKE '%$keyword%' ";
-      var_dump($sql);
+      // var_dump($sql);
     $pdo = $this->conn;
     $stmt = $pdo->prepare($sql);
     $stmt->execute();

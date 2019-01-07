@@ -5,6 +5,12 @@
   <div class="col-12">
     <h1>Locations Page</h1>
   </div>
+  <form class="col-12" action="./LocationsController/addLocation" method="post">
+  <h2>Add a location</h2>
+  <input class="col-3" name="locationName" placeholder="Enter Location Name" required>
+  <input class="col-3 addSubmit" type="submit" value="Add location!">
+</form>
+
   <div class="col-3">
 </div>
 <div class="col-3">
@@ -13,6 +19,13 @@
 </div>
 <div class="col-3">
 </div>
+<form class="col-12" action="./LocationsController/searchLocation" method="post">
+<h2>Search a location</h2>
+<input class="col-6" name="locationName" placeholder="Enter Location Name" >
+<div class="col-3">
+</div>
+<input class="col-3 addSubmit" type="submit" value="Search location!">
+</form>
   <table class="col-12">
     <tr class="productsTableHeader col-12">
       <td class="col-2">Location ID</td>
@@ -26,8 +39,8 @@
     echo "<tr class='col-12'>";
     echo "<td class='col-2'>" . $row->locationId . "</td>";
     echo "<td class='col-2'>" . $row->locationName  . "</td>";
-    // echo "<td class='col-2'><a href='./StockController/loadEditProduct/".$row->productId." '>Edit</a></td>";
-    // echo "<td class='col-2'><a href='./ProductsController/deleteProduct/".$row->productId."'>Delete</a></td>";
+    echo "<td class='col-2'><a href='./LocationsController/loadEditLocation/".$row->locationId." '>Edit</a></td>";
+    echo "<td class='col-2'><a href='./LocationsController/deleteLocation/".$row->locationId."'>Delete</a></td>";
     echo "</tr>";
   }
 

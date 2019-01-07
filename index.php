@@ -1,7 +1,5 @@
 <?php
 require 'Assets/GlobalFunctions.php';
-require 'Controller/MainController.php';
-require 'Model/MainModel.php';
 require 'Model/Products.php';
 require 'Model/Stock.php';
 require 'Model/Locations.php';

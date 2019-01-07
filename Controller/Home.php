@@ -2,7 +2,7 @@
 /**
  *
  */
-class Home extends MainController
+class Home
 {
 
 	function __construct()

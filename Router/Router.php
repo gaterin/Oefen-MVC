@@ -52,6 +52,8 @@ private $params = [];
     $this->methodName = array_shift($filteredPackets);
 
     $this->params = implode(",",$filteredPackets);
+    $this->params = explode(",",$this->params);
+    extract($this->params);
 
     $controllerFile = ucfirst($this->controllerName) . ".php";
     $controllerFilePath = "Controller/". $controllerFile;

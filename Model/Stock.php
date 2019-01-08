@@ -24,6 +24,18 @@ class Stock
     $result = $stmt->fetchAll(PDO::FETCH_OBJ);
     return $result;
   }
+
+  public function editStock(){
+    $locationId = $_POST["locationId"];
+    $productId = $_POST["productId"];
+    $amountInStock= $_POST["amountInStock"];
+
+    $sql = "UPDATE `stock` SET `amountInStock`='$amountInStock' WHERE `locationId`='$locationId' AND `productId`='$productId' ";
+    // var_dump($sql);
+    $pdo = $this->conn;
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+  }
 }
 
 

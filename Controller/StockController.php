@@ -20,6 +20,18 @@ class StockController
     $stock = $model->getAll();
     loadView('Stock', ['stock' => $stock]);
   }
+
+  public function loadEditStock($params)
+  {
+    include_once './View/EditStock.php';
+  }
+
+  public function editStock(){
+    $model = $this->model;
+    $stock = $model->editStock();
+    $this->showStock();
+  }
+
 }
 
 

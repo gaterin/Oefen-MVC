@@ -19,7 +19,7 @@
       <td class="col-2">Product Name</td>
       <td class="col-2">Stock Location</td>
       <td class="col-2">Stock</td>
-      
+
     </tr>
 
 <?php
@@ -31,8 +31,8 @@
     echo "<td class='col-2'>" . $row->productName  . "</td>";
     echo "<td class='col-2'>" . $row->locationName  . "</td>";
     echo "<td class='col-2'>" . $row->amountInStock  . "</td>";
-    // echo "<td class='col-2'><a href='./StockController/loadEditProduct/".$row->productId." '>Edit</a></td>";
-    // echo "<td class='col-2'><a href='./ProductsController/deleteProduct/".$row->productId."'>Delete</a></td>";
+    echo "<td class='col-2'><a href='./StockController/loadEditStock/".$row->productId.'/'.$row->locationId.'/'.$row->amountInStock." '>Edit</a></td>";
+    echo "<td class='col-2'><a href='./StockController/deleteStock/".$row->productId.'/'.$row->locationId."'>Delete</a></td>";
     echo "</tr>";
   }
 

@@ -1,13 +1,17 @@
 <?php
+session_start();
 require 'Assets/GlobalFunctions.php';
+
 require 'Model/Products.php';
 require 'Model/Stock.php';
 require 'Model/Locations.php';
+require 'Model/Login.php';
+require 'Model/Authentication.php';
+require 'Model/Authorization.php';
+
 require 'Router/Router.php';
 require 'config.php';
 
-
-// echo "<pre>";
 // <pre> does weird things to the website layout.
 // only use <pre> to display var_dump() output correctly on screen!!
 

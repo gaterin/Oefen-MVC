@@ -58,6 +58,11 @@ private $params = [];
     $controllerFile = ucfirst($this->controllerName) . ".php";
     $controllerFilePath = "Controller/". $controllerFile;
 
+    if ($this->controllerName != "Home") {
+    $authorization = new Authorization($this->controllerName);
+    }
+
+
     return $this->controllerFilePathExists($controllerFilePath);
   }
 
@@ -103,6 +108,7 @@ private $params = [];
    */
   private function sendToDestination($controllerFilePath)
   {
+
 		include $controllerFilePath;
 		$controller = new $this->controllerName();
     $method = $this->controllerMethodExists($controller,$this->methodName);

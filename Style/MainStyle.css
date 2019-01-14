@@ -26,3 +26,7 @@ table , td{
 		width: 100%;
 	}
 }
+
+pre{
+  text-align: left !important;
+}

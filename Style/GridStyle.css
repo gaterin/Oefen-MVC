@@ -28,10 +28,11 @@
 /* End Grid-Section */
 
 /* give all {class="col"}elements: padding, float and border*/
-[class*="col-"] {
+[class*="col-"]
+{
     float: left;
     padding: 15px;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
 /* all first-child-elements with attribute:{class="row"} */
 .row::after {

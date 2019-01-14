@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 05, 2019 at 03:40 PM
--- Server version: 10.1.35-MariaDB
--- PHP Version: 7.2.9
+-- Gegenereerd op: 15 jan 2019 om 00:42
+-- Serverversie: 10.1.36-MariaDB
+-- PHP-versie: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `locations`
+-- Tabelstructuur voor tabel `locations`
 --
 
 CREATE TABLE `locations` (
@@ -34,17 +34,18 @@ CREATE TABLE `locations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `locations`
+-- Gegevens worden geëxporteerd voor tabel `locations`
 --
 
 INSERT INTO `locations` (`locationId`, `locationName`) VALUES
 (1, 'Delft'),
-(2, 'Utrecht');
+(2, 'Utrecht'),
+(3, 'Overvecht');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Tabelstructuur voor tabel `products`
 --
 
 CREATE TABLE `products` (
@@ -54,7 +55,7 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `products`
+-- Gegevens worden geëxporteerd voor tabel `products`
 --
 
 INSERT INTO `products` (`productId`, `productName`, `productPrice`) VALUES
@@ -68,7 +69,7 @@ INSERT INTO `products` (`productId`, `productName`, `productPrice`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `stock`
+-- Tabelstructuur voor tabel `stock`
 --
 
 CREATE TABLE `stock` (
@@ -78,7 +79,7 @@ CREATE TABLE `stock` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `stock`
+-- Gegevens worden geëxporteerd voor tabel `stock`
 --
 
 INSERT INTO `stock` (`amountInStock`, `locationId`, `productId`) VALUES
@@ -91,55 +92,126 @@ INSERT INTO `stock` (`amountInStock`, `locationId`, `productId`) VALUES
 (32, 2, 6),
 (75, 2, 7);
 
+-- --------------------------------------------------------
+
 --
--- Indexes for dumped tables
+-- Tabelstructuur voor tabel `userroles`
+--
+
+CREATE TABLE `userroles` (
+  `userRoleId` int(11) NOT NULL,
+  `userRoleName` varchar(36) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `userroles`
+--
+
+INSERT INTO `userroles` (`userRoleId`, `userRoleName`) VALUES
+(1, 'admin'),
+(2, 'manager');
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `users`
+--
+
+CREATE TABLE `users` (
+  `userId` int(11) NOT NULL,
+  `username` varchar(24) DEFAULT NULL,
+  `password` varchar(16) DEFAULT NULL,
+  `userRoleId` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `users`
+--
+
+INSERT INTO `users` (`userId`, `username`, `password`, `userRoleId`) VALUES
+(1, 'admin', 'admin', 1),
+(2, 'manager', 'manager', 2);
+
+--
+-- Indexen voor geëxporteerde tabellen
 --
 
 --
--- Indexes for table `locations`
+-- Indexen voor tabel `locations`
 --
 ALTER TABLE `locations`
   ADD PRIMARY KEY (`locationId`);
 
 --
--- Indexes for table `products`
+-- Indexen voor tabel `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`productId`);
 
 --
--- Indexes for table `stock`
+-- Indexen voor tabel `stock`
 --
 ALTER TABLE `stock`
   ADD PRIMARY KEY (`locationId`,`productId`),
   ADD KEY `stockProduct` (`productId`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Indexen voor tabel `userroles`
+--
+ALTER TABLE `userroles`
+  ADD PRIMARY KEY (`userRoleId`);
+
+--
+-- Indexen voor tabel `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`userId`),
+  ADD KEY `userRoleId` (`userRoleId`);
+
+--
+-- AUTO_INCREMENT voor geëxporteerde tabellen
 --
 
 --
--- AUTO_INCREMENT for table `locations`
+-- AUTO_INCREMENT voor een tabel `locations`
 --
 ALTER TABLE `locations`
-  MODIFY `locationId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `locationId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT voor een tabel `products`
 --
 ALTER TABLE `products`
   MODIFY `productId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- Constraints for dumped tables
+-- AUTO_INCREMENT voor een tabel `userroles`
+--
+ALTER TABLE `userroles`
+  MODIFY `userRoleId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT voor een tabel `users`
+--
+ALTER TABLE `users`
+  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Beperkingen voor geëxporteerde tabellen
 --
 
 --
--- Constraints for table `stock`
+-- Beperkingen voor tabel `stock`
 --
 ALTER TABLE `stock`
   ADD CONSTRAINT `stockLocation` FOREIGN KEY (`locationId`) REFERENCES `locations` (`locationId`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `stockProduct` FOREIGN KEY (`productId`) REFERENCES `products` (`productId`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Beperkingen voor tabel `users`
+--
+ALTER TABLE `users`
+  ADD CONSTRAINT `userRoleId` FOREIGN KEY (`userRoleId`) REFERENCES `userroles` (`userRoleId`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

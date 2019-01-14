@@ -3,6 +3,6 @@
     <h1>Footer</h1>
   </div>
 </div>
-
 </body>
+<script src="./Javascript/GridBorderSwitch.js" type="text/javascript"></script>
 </html>

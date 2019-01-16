@@ -26,8 +26,7 @@ class LoginController
     $login = $loginModel->login($username,$password);
     vardump($login);
     $authenticationModel = $this->authenticationModel;
-    $authenticationModel->authenticate($login);
-    headHome();
+    headHome($authenticationModel->authenticate($login));
   }
   public function logout()
   {

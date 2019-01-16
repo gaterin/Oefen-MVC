@@ -5,4 +5,8 @@
 </div>
 </body>
 <script src="./Javascript/GridBorderSwitch.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+<script src="./Javascript/ChartScript.js">
+
+</script>
 </html>

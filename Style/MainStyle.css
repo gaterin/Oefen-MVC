@@ -30,3 +30,9 @@ td{
 pre{
   text-align: left !important;
 }
+
+#homePage{
+  background-color:white;
+  color:black;
+  font-weight: bold;
+}

@@ -52,13 +52,21 @@ private $params = [];
     $this->methodName = array_shift($filteredPackets);
 
     $this->params = implode(",",$filteredPackets);
+
     $this->params = explode(",",$this->params);
-    extract($this->params);
+
+    if (count($this->params)  == 1)
+    {
+    $this->params = implode($this->params);
+    }
+
+
 
     $controllerFile = ucfirst($this->controllerName) . ".php";
     $controllerFilePath = "Controller/". $controllerFile;
 
-    if ($this->controllerName != "Home") {
+    if ($this->controllerName != "Home")
+    {
     $authorization = new Authorization($this->controllerName);
     }
 

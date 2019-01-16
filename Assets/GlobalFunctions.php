@@ -13,8 +13,9 @@ function vardump($value)
   echo "</pre>";
 }
 
-function headHome()
+function headHome($msg = '')
 {
+  $_SESSION['msg'] = $msg;
   header("Location: ../Home/showHome");
 }
  ?>

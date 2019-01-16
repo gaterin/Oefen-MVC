@@ -29,15 +29,8 @@
             </nav>
           </div>
         </div>
+
         <div class="col-2">
-          <?php
-          // vardump($_SESSION["msg"]);
-          if (isset($_SESSION["msg"]))
-          {
-            echo $_SESSION["msg"];
-            unset($_SESSION["msg"]);
-          }
-          ?>
 
           <?php
           if (!isset($_SESSION["username"]))
@@ -46,7 +39,7 @@
           <h1>Login</h1>
           <form class="" action="./LoginController/login" method="post">
             <input type="text" name="username" placeholder="Enter username..." required>
-            <input type="text" name="password" placeholder="Enter password..." required>
+            <input type="password" name="password" placeholder="Enter password..." required>
             <input type="submit" name="loginbool" value="Login">
           </form>
         <?php }else {  ?>
@@ -57,6 +50,18 @@
           </form>
           <?php } ?>
 
+        </div>
+        <div class="col-12">
+          <h2>
+          <?php
+          // vardump($_SESSION["msg"]);
+          if (isset($_SESSION["msg"]))
+          {
+            echo $_SESSION["msg"];
+            unset($_SESSION["msg"]);
+          }
+          ?>
+        </h2>
         </div>
 
       </div>

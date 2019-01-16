@@ -26,8 +26,11 @@ class ProductsController
     $this->showProducts();
   }
 
-  public function loadEditProduct($productId)
+  public function loadEditProduct($params)
   {
+    $productId = $params[0];
+    $productName = $params[1];
+    $productPrice = $params[2];
     include_once './View/EditProduct.php';
   }
 

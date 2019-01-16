@@ -23,15 +23,28 @@ class StockController
 
   public function loadEditStock($params)
   {
+    $productId = $params[0];
+    $locationId = $params[1];
+    $amountInStock = $params[2];
+    $productName = $params[3];
+    $locationName = $params[4];
     include_once './View/EditStock.php';
   }
 
-  public function editStock(){
+  public function editStock()
+  {
     $model = $this->model;
     $stock = $model->editStock();
     $this->showStock();
   }
 
+  public function deleteStock($params)
+  {
+    $model = $this->model;
+    $stock = $model->deleteStock($params);
+    // $_SESSION["msg"] = "$params[2] has been deleted!";
+    $this->showStock();
+  }
 }
 
 

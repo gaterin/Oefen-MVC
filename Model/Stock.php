@@ -25,12 +25,22 @@ class Stock
     return $result;
   }
 
-  public function editStock(){
+  public function editStock()
+  {
     $locationId = $_POST["locationId"];
     $productId = $_POST["productId"];
     $amountInStock= $_POST["amountInStock"];
 
     $sql = "UPDATE `stock` SET `amountInStock`='$amountInStock' WHERE `locationId`='$locationId' AND `productId`='$productId' ";
+    // var_dump($sql);
+    $pdo = $this->conn;
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+  }
+
+  public function deleteStock($params)
+  {
+    $sql = "DELETE FROM `stock` WHERE `productId`='$params[0]' AND `locationId`='$params[1]'";
     // var_dump($sql);
     $pdo = $this->conn;
     $stmt = $pdo->prepare($sql);

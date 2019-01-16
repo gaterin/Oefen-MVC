@@ -16,21 +16,20 @@ class Authentication
   {
     if (empty($login))
     {
-      $_SESSION['msg'] = "Wrong login!";
+      return "Wrong login!";
     }
     else
     {
       $_SESSION["username"] = $login[0]->username;
       $_SESSION["userrole"] = $login[0]->userRoleName;
-      $_SESSION['msg'] = "Succesful login!";
+      return "Succesful login!";
     }
   }
 
   public function destroy()
   {
     session_unset();
-    headHome();
-    $_SESSION['msg'] = "Succesful logout!";
+    headHome("Succesful logout!");
   }
 }
 

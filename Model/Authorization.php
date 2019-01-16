@@ -18,7 +18,7 @@ class Authorization
     }
     else
     {
-      headHome();
+      headHome("You can not access that page");
     }
   }
   public function determineAuthorization($controller,$userrole)
@@ -51,7 +51,7 @@ class Authorization
         case 'admin':
           break;
         case 'manager':
-          headHome();
+          headHome("You can not access that page");
           break;
         }
 

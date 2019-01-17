@@ -51,17 +51,19 @@
           <?php } ?>
 
         </div>
-        <div class="col-12">
-          <h2>
-          <?php
-          // vardump($_SESSION["msg"]);
-          if (isset($_SESSION["msg"]))
-          {
-            echo $_SESSION["msg"];
-            unset($_SESSION["msg"]);
-          }
-          ?>
-        </h2>
+        <div class="row">
+          <div class="col-12">
+            <h2>
+              <?php
+              // vardump($_SESSION["msg"]);
+              if (isset($_SESSION["msg"]))
+              {
+                echo $_SESSION["msg"];
+                unset($_SESSION["msg"]);
+              }
+              ?>
+            </h2>
+          </div>
         </div>
 
       </div>

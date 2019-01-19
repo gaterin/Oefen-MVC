@@ -6,7 +6,7 @@
     <h1>ProductsPage</h1>
   </div>
 
-  <form class="col-12" action="./ProductsController/addProduct" method="post">
+<form class="col-12" action="./ProductsController/addProduct" method="post">
   <h2>Add a product</h2>
   <input class="col-3" name="productName" placeholder="Enter Product Name" required>
   <input class="col-3" name="productPrice" placeholder="Enter Product Price" required>

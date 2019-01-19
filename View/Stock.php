@@ -1,10 +1,32 @@
-<?php
-
-?>
 <div class="row">
   <div class="col-12">
     <h1>Products Stock Page</h1>
   </div>
+  <form class="col-12" action="./StockController/addStock" method="post">
+    <h2>Add stock</h2>
+    <select class="col-2">
+      <option value="" selected disabled hidden>Choose a product</option>
+      <?php
+      foreach ($allProducts as $row)
+      {
+        echo "<option name='productId' value='$row->productId'>$row->productName</option>";
+
+      }
+        ?>
+    </select>
+    <select class="col-2">
+      <option value="" selected disabled hidden>Choose a location</option>
+      <?php
+      foreach ($stock as $row)
+      {
+        echo "<option name='locationId' value='$row->locationId'>$row->locationName</option>";
+      }
+       ?>
+    </select>
+    <input class="col-2" name="amountInStock" placeholder="Enter Stock" required>
+    <!-- <input class="col-3" name="productPrice" placeholder="Enter Stock Location" required> -->
+    <input class="col-2 addSubmit" type="submit" value="Add stock!">
+  </form>
   <div class="col-6">
   </div>
 <div class="col-3">

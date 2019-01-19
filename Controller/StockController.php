@@ -17,8 +17,22 @@ class StockController
   public function showStock()
   {
     $model = $this->model;
+    $this->loadAddStockView();
     $stock = $model->getAll();
     loadView('Stock', ['stock' => $stock]);
+
+  }
+  public function loadAddStockView()
+  {
+    $model = $this->model;
+    $allProducts = $model->getAllProducts();
+    vardump($allProducts);
+  }
+  public function addStock()
+  {
+    $model = $this->model;
+    $stock = $model->addStock();
+    $this->showStock();
   }
 
   public function loadEditStock($params)

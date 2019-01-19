@@ -24,7 +24,28 @@ class Stock
     $result = $stmt->fetchAll(PDO::FETCH_OBJ);
     return $result;
   }
+  public function getAllProducts()
+  {
+    $Products = new Products();
+    return $Products->getAll();
 
+  }
+  public function getAllLocations()
+  {
+    // code...
+  }
+  public function addStock()
+  {
+    $locationId = $_POST["locationId"];
+    $productId = $_POST["productId"];
+    $amountInStock= $_POST["amountInStock"];
+
+    $sql = "INSERT INTO `stock` (`amountInStock`, `locationId`, `productId`) VALUES ('$amountInStock', '$locationId', '$productId')";
+    // var_dump($sql);
+    $pdo = $this->conn;
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+  }
   public function editStock()
   {
     $locationId = $_POST["locationId"];

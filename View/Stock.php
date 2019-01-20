@@ -4,22 +4,22 @@
   </div>
   <form class="col-12" action="./StockController/addStock" method="post">
     <h2>Add stock</h2>
-    <select class="col-2">
+    <select name="product" class="col-2">
       <option value="" selected disabled hidden>Choose a product</option>
       <?php
-      foreach ($allProducts as $row)
+      foreach ($products as $row)
       {
-        echo "<option name='productId' value='$row->productId'>$row->productName</option>";
+        echo "<option value='$row->productId'>$row->productName</option>";
 
       }
         ?>
     </select>
-    <select class="col-2">
+    <select name="location" class="col-2">
       <option value="" selected disabled hidden>Choose a location</option>
       <?php
-      foreach ($stock as $row)
+      foreach ($locations as $row)
       {
-        echo "<option name='locationId' value='$row->locationId'>$row->locationName</option>";
+        echo "<option value='$row->locationId'>$row->locationName</option>";
       }
        ?>
     </select>

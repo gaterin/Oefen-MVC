@@ -17,17 +17,12 @@ class StockController
   public function showStock()
   {
     $model = $this->model;
-    $this->loadAddStockView();
     $stock = $model->getAll();
-    loadView('Stock', ['stock' => $stock]);
+    $products = $model->getAllProducts();
+    $locations = $model->getAllLocations();
+    LoadView('Stock',['products' => $products],['stock' => $stock],['locations' => $locations]);
+  }
 
-  }
-  public function loadAddStockView()
-  {
-    $model = $this->model;
-    $allProducts = $model->getAllProducts();
-    vardump($allProducts);
-  }
   public function addStock()
   {
     $model = $this->model;

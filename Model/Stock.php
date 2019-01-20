@@ -32,14 +32,14 @@ class Stock
   }
   public function getAllLocations()
   {
-    // code...
+    $locations = new Locations();
+    return $locations->getAll();
   }
   public function addStock()
   {
-    $locationId = $_POST["locationId"];
-    $productId = $_POST["productId"];
-    $amountInStock= $_POST["amountInStock"];
-
+    $locationId = $_POST['location'];
+    $productId = $_POST["product"];
+    $amountInStock = $_POST["amountInStock"];
     $sql = "INSERT INTO `stock` (`amountInStock`, `locationId`, `productId`) VALUES ('$amountInStock', '$locationId', '$productId')";
     // var_dump($sql);
     $pdo = $this->conn;

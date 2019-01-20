@@ -1,8 +1,10 @@
 <?php
 
-function loadView($viewPath, $vars = [])
+function loadView($viewPath, $vars1 = [], $vars2 = [], $vars3 = [])
 {
-  extract($vars);
+  extract($vars1);
+  extract($vars2);
+  extract($vars3);
   include_once 'View/' . $viewPath . '.php';
 }
 

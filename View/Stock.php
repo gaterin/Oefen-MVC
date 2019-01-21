@@ -24,15 +24,37 @@
        ?>
     </select>
     <input class="col-2" name="amountInStock" placeholder="Enter Stock" required>
-    <!-- <input class="col-3" name="productPrice" placeholder="Enter Stock Location" required> -->
     <input class="col-2 addSubmit" type="submit" value="Add stock!">
   </form>
-  <div class="col-6">
-  </div>
-<div class="col-3">
-</div>
-<div class="col-3">
-</div>
+
+	<h2>Search stock</h2>
+	<div class="col-12">
+	  <div id="dropdownSearchProduct" class="dropdown-content">
+	    <input class="col-6" type="text" id="searchInputProduct" onkeyup="filterFunction()" placeholder="Enter Product Name">
+			<?php
+			// foreach
+			?>
+
+	    <!-- <a href="#about">About</a>
+	    <a href="#base">Base</a>
+	    <a href="#blog">Blog</a>
+	    <a href="#contact">Contact</a>
+	    <a href="#custom">Custom</a>
+	    <a href="#support">Support</a>
+	    <a href="#tools">Tools</a>
+	    <a href="#about">About</a>
+	    <a href="#base">Base</a>
+	    <a href="#blog">Blog</a>
+	    <a href="#contact">Contact</a>
+	    <a href="#custom">Custom</a>
+	    <a href="#support">Support</a>
+	    <a href="#tools">Tools</a> -->
+	  </div>
+		<button onclick="search()" class="col-2 dropbtn">Search Product</button>
+		<div class="col-3">
+		</div>
+	</div>
+
   <table class="col-12">
     <tr class="productsTableHeader col-12">
       <td class="col-2">Product Name</td>

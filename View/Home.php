@@ -16,7 +16,7 @@
     </div> -->
       <!-- <canvas id="myChart"></canvas> -->
 
-    <img class="col-8" src="./Images/HomeDepot.jpg">
+    <!-- <img class="col-8" src="./Images/HomeDepot.jpg"> -->
     <div class="col-2">
 
     </div>

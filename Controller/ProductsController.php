@@ -48,8 +48,8 @@ class ProductsController
     $this->showProducts();
   }
 
-  public function searchProduct(){
-
+  public function searchProduct()
+  {
     $model = $this->model;
     $products = $model->getSearchedProduct();
     loadView('Products', ['products' => $products]);

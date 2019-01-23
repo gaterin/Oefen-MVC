@@ -10,23 +10,13 @@
   <h2>Add a product</h2>
   <input class="col-3" name="productName" placeholder="Enter Product Name" required>
   <input class="col-3" name="productPrice" placeholder="Enter Product Price" required>
-  <input class="col-3 addSubmit" type="submit" value="Add product!">
+  <input class="col-2 addSubmit" type="submit" value="Add product!">
 </form>
 
-  <div class="col-3">
-</div>
-<div class="col-3">
-</div>
-<div class="col-3">
-</div>
-<div class="col-3">
-</div>
 <form class="col-12" action="./ProductsController/searchProduct" method="post">
 <h2>Search a product</h2>
-<input class="col-6" name="productName" placeholder="Enter Product Name" >
-<div class="col-3">
-</div>
-<input class="col-3 addSubmit" type="submit" value="Search product!">
+<input class="col-6" name="productName" placeholder="Enter Product Name" required>
+<input class="col-2 addSubmit" type="submit" value="Search product!">
 </form>
 
   <table class="col-12">

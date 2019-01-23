@@ -7,8 +7,8 @@
   </div>
   <form class="col-12" action="./LocationsController/addLocation" method="post">
   <h2>Add a location</h2>
-  <input class="col-3" name="locationName" placeholder="Enter Location Name" required>
-  <input class="col-3 addSubmit" type="submit" value="Add location!">
+  <input class="col-6" name="locationName" placeholder="Enter Location Name" required>
+  <input class="col-2 addSubmit" type="submit" value="Add location!">
 </form>
 
   <div class="col-3">
@@ -21,10 +21,8 @@
 </div>
 <form class="col-12" action="./LocationsController/searchLocation" method="post">
 <h2>Search a location</h2>
-<input class="col-6" name="locationName" placeholder="Enter Location Name" >
-<div class="col-3">
-</div>
-<input class="col-3 addSubmit" type="submit" value="Search location!">
+<input class="col-6" name="locationName" placeholder="Enter Location Name" required>
+<input class="col-2 addSubmit" type="submit" value="Search location!">
 </form>
   <table class="col-12">
     <tr class="productsTableHeader col-12">

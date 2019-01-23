@@ -54,6 +54,18 @@ class StockController
     // $_SESSION["msg"] = "$params[2] has been deleted!";
     $this->showStock();
   }
+  public function searchStockLocation()
+  {
+    $model = $this->model;
+    $stock = $model->getSearchedStockLocation();
+    loadView('Stock', ['stock' => $stock]);
+  }
+  public function searchStockProduct()
+  {
+    $model = $this->model;
+    $stock = $model->getSearchedStockProduct();
+    loadView('Stock', ['stock' => $stock]);
+  }
 }
 
 

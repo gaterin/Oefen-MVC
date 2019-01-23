@@ -67,6 +67,26 @@ class Stock
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
   }
+  public function getSearchedStockLocation()
+  {
+    $keyword = $_POST["location"];
+    $sql = "SELECT * FROM stock NATURAL JOIN products NATURAL JOIN locations WHERE `locationName` LIKE '%$keyword%' ";
+    $pdo = $this->conn;
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+    return $result;
+  }
+  public function getSearchedStockProduct()
+  {
+    $keyword = $_POST["product"];
+    $sql = "SELECT * FROM stock NATURAL JOIN products NATURAL JOIN locations WHERE `productName` LIKE '%$keyword%' ";
+    $pdo = $this->conn;
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+    return $result;
+  }
 }
 
 

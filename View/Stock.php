@@ -4,17 +4,16 @@
   </div>
   <form class="col-12" action="./StockController/addStock" method="post">
     <h2>Add stock</h2>
-    <select name="product" class="col-2">
+    <select name="product" class="col-2" required>
       <option value="" selected disabled hidden>Choose a product</option>
       <?php
       foreach ($products as $row)
       {
         echo "<option value='$row->productId'>$row->productName</option>";
-
       }
         ?>
     </select>
-    <select name="location" class="col-2">
+    <select name="location" class="col-2" required>
       <option value="" selected disabled hidden>Choose a location</option>
       <?php
       foreach ($locations as $row)
@@ -24,47 +23,31 @@
        ?>
     </select>
     <input class="col-2" name="amountInStock" placeholder="Enter Stock" required>
-    <input class="col-2 addSubmit" type="submit" value="Add stock!">
+    <input class="col-2 addSubmit" type="submit" value="Add stock">
   </form>
 
 	<h2>Search stock</h2>
-	<div class="col-12">
-	  <div id="dropdownSearchProduct" class="dropdown-content">
-	    <input class="col-6" type="text" id="searchInputProduct" onkeyup="filterFunction()" placeholder="Enter Product Name">
-			<?php
-			// foreach
-			?>
+  <form class="col-12" action="./StockController/searchStockProduct" method="post">
+	   <input class="col-6" name="product" type="text" placeholder="Enter Product Name" required>
+		 <input class="col-2" type="submit" value="Search Product">
+		 <div class="col-4"></div>
+  </form>
 
-	    <!-- <a href="#about">About</a>
-	    <a href="#base">Base</a>
-	    <a href="#blog">Blog</a>
-	    <a href="#contact">Contact</a>
-	    <a href="#custom">Custom</a>
-	    <a href="#support">Support</a>
-	    <a href="#tools">Tools</a>
-	    <a href="#about">About</a>
-	    <a href="#base">Base</a>
-	    <a href="#blog">Blog</a>
-	    <a href="#contact">Contact</a>
-	    <a href="#custom">Custom</a>
-	    <a href="#support">Support</a>
-	    <a href="#tools">Tools</a> -->
-	  </div>
-		<button onclick="search()" class="col-2 dropbtn">Search Product</button>
-		<div class="col-3">
-		</div>
-	</div>
+  <form class="col-12" action="./StockController/searchStockLocation" method="post">
+	   <input class="col-6" name="location" type="text" placeholder="Enter Location Name" required>
+		 <input class="col-2" type="submit" value="Search Location">
+		 <div class="col-4"></div>
+  </form>
+
 
   <table class="col-12">
     <tr class="productsTableHeader col-12">
       <td class="col-2">Product Name</td>
       <td class="col-2">Stock Location</td>
       <td class="col-2">Stock</td>
-
     </tr>
 
 <?php
-  // var_dump($stock);
   foreach ($stock as $row)
   {
     echo "<tr class='col-12'>";

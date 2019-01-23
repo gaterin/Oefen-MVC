@@ -1,16 +1,19 @@
 body{
   color: #cccccc;
-  text-align: center !important;
-  font-family: 'Roboto', sans-serif !important;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
   width: 70%;
   height: auto;
   margin: auto;
   border-right: black 1px solid;
   border-left: black 1px solid;
-  background-color:rgba(0, 0, 0, 0.8);
+  background-color:rgba(0, 0, 0, 0.95);
 }
 html{
-  background-color: yellow;
+  background-image: url("../Images/HomeDepot.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 a{
   color: #cccccc;
@@ -28,11 +31,5 @@ td{
 }
 
 pre{
-  text-align: left !important;
+  text-align: left;
 }
-
-/* #homePage{
-  background-color:white;
-  color:black;
-  font-weight: bold;
-} */

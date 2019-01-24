@@ -20,10 +20,14 @@
 </form>
 
   <table class="col-12">
+    <tr class="col-12">
+      <td class="col-2"><a href="./ProductsController/sortProduct/productName">Sort Product</a></td>
+      <td class="col-2"><a href="./ProductsController/sortProduct/productPrice">Sort Price</a></td>
+    </tr>
     <tr class="productsTableHeader col-12">
+
       <td class="col-2">Name</td>
       <td class="col-2">Price</td>
-
     </tr>
 
 <?php

@@ -20,4 +20,8 @@ function headHome($msg = '')
   $_SESSION['msg'] = $msg;
   header("Location: ../Home/showHome");
 }
+function scrollDown()
+{
+  echo '<script>window.scrollTo(0,document.body.scrollHeight);</script>';
+}
  ?>

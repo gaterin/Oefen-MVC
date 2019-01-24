@@ -60,6 +60,7 @@ class ProductsController
     $model = $this->model;
     $products = $model->sortProduct($sortBy);
     loadView('Products', ['products' => $products]);
+    scrollDown();
   }
 }
  ?>

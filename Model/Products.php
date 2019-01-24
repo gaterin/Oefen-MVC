@@ -65,6 +65,40 @@ class Products
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
   }
+
+  public function sortProduct($sortBy)
+  {
+    if (!isset($_SESSION["orderBy"]))
+    {
+      $_SESSION["orderBy"] = "DESC";
+    }
+    $orderBy = $_SESSION["orderBy"];
+    switch ($orderBy)
+    {
+      case 'ASC':
+        $orderBy="DESC";
+        break;
+      case 'DESC':
+        $orderBy="ASC";
+        break;
+    }
+    $_SESSION["orderBy"] = $orderBy;
+
+    if ($sortBy=="productName")
+    {
+      $sortBy=="productName";
+    }
+    else
+    {
+      $sortBy = "productPrice";
+    }
+    $sql = "SELECT * FROM products ORDER BY $sortBy $orderBy";
+    $pdo = $this->conn;
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+    return $result;
+  }
 }
 
 

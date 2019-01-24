@@ -54,5 +54,12 @@ class ProductsController
     $products = $model->getSearchedProduct();
     loadView('Products', ['products' => $products]);
   }
+
+  public function sortProduct($sortBy)
+  {
+    $model = $this->model;
+    $products = $model->sortProduct($sortBy);
+    loadView('Products', ['products' => $products]);
+  }
 }
  ?>

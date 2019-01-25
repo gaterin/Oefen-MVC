@@ -14,10 +14,13 @@ class StockController
     $this->model = new Stock(DSN,USER,PASS);
   }
 
-  public function showStock()
+  public function showStock($stock="")
   {
     $model = $this->model;
-    $stock = $model->getAll();
+    if ($stock=="")
+    {
+      $stock = $model->getAll();
+    }
     $products = $model->getAllProducts();
     $locations = $model->getAllLocations();
     LoadView('Stock',['products' => $products],['stock' => $stock],['locations' => $locations]);
@@ -65,6 +68,14 @@ class StockController
     $model = $this->model;
     $stock = $model->getSearchedStockProduct();
     loadView('Stock', ['stock' => $stock]);
+  }
+
+  public function sortStock($sortBy)
+  {
+    $model = $this->model;
+    $stock = $model->sortStock($sortBy);
+    $this->showStock($stock);
+    scrollDown();
   }
 }
 

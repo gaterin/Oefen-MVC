@@ -87,6 +87,44 @@ class Stock
     $result = $stmt->fetchAll(PDO::FETCH_OBJ);
     return $result;
   }
+
+  public function sortStock($sortBy)
+  {
+    if (!isset($_SESSION["orderBy"]))
+    {
+      $_SESSION["orderBy"] = "DESC";
+    }
+    $orderBy = $_SESSION["orderBy"];
+    switch ($orderBy)
+    {
+      case 'ASC':
+        $orderBy="DESC";
+        break;
+      case 'DESC':
+        $orderBy="ASC";
+        break;
+    }
+    $_SESSION["orderBy"] = $orderBy;
+
+    if ($sortBy=="productName")
+    {
+      $sortBy=="productName";
+    }
+    elseif($sortBy=="location")
+    {
+      $sortBy = "locationName";
+    }
+    elseif($sortBy=="stock")
+    { 
+      $sortBy = "amountInStock";
+    }
+    $sql = "SELECT * FROM stock NATURAL JOIN products NATURAL JOIN locations ORDER BY $sortBy $orderBy";
+    $pdo = $this->conn;
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+    return $result;
+  }
 }
 
 

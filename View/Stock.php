@@ -41,6 +41,11 @@
 
 
   <table class="col-12">
+    <tr class="col-12">
+      <td class="col-2"><a href="./StockController/sortStock/productName">Sort By Product</a></td>
+      <td class="col-2"><a href="./StockController/sortStock/location">Sort By Location</a></td>
+      <td class="col-2"><a href="./StockController/sortStock/stock">Sort By Stock</a></td>
+    </tr>
     <tr class="productsTableHeader col-12">
       <td class="col-2">Product Name</td>
       <td class="col-2">Stock Location</td>

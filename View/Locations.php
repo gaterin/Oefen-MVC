@@ -24,8 +24,8 @@
 <input class="col-6" name="locationName" placeholder="Enter Location Name" required>
 <input class="col-2 addSubmit" type="submit" value="Search location!">
 </form>
-  <table class="col-12">
-    <tr class="productsTableHeader col-12">
+  <table class="col-12" id="tableHeader">
+    <tr class="col-12">
       <td class="col-2">Location ID</td>
       <td class="col-2">Location Name</td>
     </tr>

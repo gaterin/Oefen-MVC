@@ -40,7 +40,7 @@
   </form>
 
 
-  <table class="col-12">
+  <table class="col-12" id="tableHeader">
     <tr class="col-12">
       <td class="col-2"><a href="./StockController/sortStock/productName">Sort By Product</a></td>
       <td class="col-2"><a href="./StockController/sortStock/location">Sort By Location</a></td>

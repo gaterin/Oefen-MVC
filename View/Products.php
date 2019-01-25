@@ -19,7 +19,7 @@
 <input class="col-2 addSubmit" type="submit" value="Search product!">
 </form>
 
-  <table class="col-12">
+  <table class="col-12" id="tableHeader">
     <tr class="col-12">
       <td class="col-2"><a href="./ProductsController/sortProduct/productName">Sort By Product</a></td>
       <td class="col-2"><a href="./ProductsController/sortProduct/productPrice">Sort By Price</a></td>

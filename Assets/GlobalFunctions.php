@@ -22,6 +22,6 @@ function headHome($msg = '')
 }
 function scrollDown()
 {
-  echo '<script>window.scrollTo(0,document.body.scrollHeight);</script>';
+  echo '<script>document.getElementById("tableHeader").scrollIntoView();</script>';
 }
  ?>

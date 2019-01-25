@@ -62,12 +62,14 @@ class StockController
     $model = $this->model;
     $stock = $model->getSearchedStockLocation();
     loadView('Stock', ['stock' => $stock]);
+    scrollDown();
   }
   public function searchStockProduct()
   {
     $model = $this->model;
     $stock = $model->getSearchedStockProduct();
     loadView('Stock', ['stock' => $stock]);
+    scrollDown();
   }
 
   public function sortStock($sortBy)

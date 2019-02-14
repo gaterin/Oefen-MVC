@@ -1,0 +1,22 @@
+Installeren van de benodigde programma’s
+Eerst installer ik de benodigde programma’s zoals  xampp en atom.
+Database opstellen
+Nu ga ik de database maken zodat ik die later kan gebruiken in de applicatie
+MVC-Mappenstructuur / mappenlocatie
+Vervolgens zet ik  in de htdocs map de complete MVC-mappenstructuur van de applicatie. 
+Webserver laten draaien
+Start xampp en test het.
+Index.php aanmaken
+Nu maak ik index.php om alle requests van de gebruiker op te vangen. Hierin wordt alle models,config file en een eventuele main controller geincluded.
+.htaccess file aanmaken
+Met dit bestand gaat php alle requests die via de url binnen komen door laten sturen naar index.php. Hierdoor kunnen we een efficiente manier van de MVC patroon gebruiken.
+Router maken
+De router zorgt ervoor dat de applicatie weet welke controller er aangeroepen moet worden via de url. Ook zorgt de router voor het verwijzen naar een error pagina als er incorrecte input is verzonden.
+(main) Controller maken
+De main controller wordt als eerst gemaakt. De functie van de main controller  is een soort ‘ouder’ rol spelen waar alle kleine controllers naar toe extenden. Hierdoor hoef je minder typ werk te doen en blijft je code DRY.
+(main) Model maken
+Het zelfde geld voor de main model. De kleinere models gebruiken bepaalde functies van de main model en de rest wordt er simpl bij toegevoegd.
+Css en styling
+Als laatst doe ik css omdat eerst alles goed moet werken voordat alles er goed uit ziet.
+Applicatie testen
+Dit is de laatste stap. Dit doe ik na het maken van elke kleine functionaliteit. Anders ga je heel lang debuggen aan het eind.

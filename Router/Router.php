@@ -67,7 +67,7 @@ private $params = [];
 
     if ($this->controllerName != "Home")
     {
-    $authorization = new Authorization($this->controllerName);
+      $authorization = new Authorization($this->controllerName);
     }
 
 
@@ -88,7 +88,7 @@ private $params = [];
     {
       $this->controllerName = "Home";
       $this->methodName = "showHome";
-      $controllerFilePath = "Controller/Home.php";
+      $controllerFilePath = "./Controller/Home.php";
     }
 
     return $controllerFilePath;

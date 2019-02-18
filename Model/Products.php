@@ -15,9 +15,15 @@ class Products
     $pdo = $this->conn;
   }
 
-  public function getAll()
+  public function getAll($page)
   {
-    $sql = 'SELECT * FROM products';
+    if ($page=="")
+    {
+      $page=1;
+    }
+    $pageIndexNumber = $page * 5 - 5;
+
+    $sql = "SELECT * FROM products LIMIT $pageIndexNumber,5";
     $pdo = $this->conn;
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
@@ -98,6 +104,17 @@ class Products
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_OBJ);
     return $result;
+  }
+
+  public function getPages()
+  {
+    $sql = "SELECT COUNT(*) FROM `products`";
+    $pdo = $this->conn;
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetch();
+    $pages = ceil($result[0]/5);
+    return $pages;
   }
 }
 

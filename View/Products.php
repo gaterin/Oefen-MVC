@@ -30,19 +30,23 @@
       <td class="col-2">Price</td>
     </tr>
 
-<?php
+    <?php
+    foreach ($products as $row)
+    {
+      echo "<tr class='col-12'>";
+      echo "<td class='col-2'>" . $row->productName  . "</td>";
+      echo "<td class='col-2'>€ " . str_replace('.', ',', $row->productPrice)  . "</td>";
+      echo "<td class='col-2'><a href='./ProductsController/loadEditProduct/".$row->productId.'/'.$row->productName.'/'.$row->productPrice."'>Edit</  a></td>";
+      echo "<td class='col-2'><a href='./ProductsController/deleteProduct/".$row->productId."'>Delete</a></td>";
+      echo "</tr>";
+    }
 
-
-  foreach ($products as $row)
-  {
-    echo "<tr class='col-12'>";
-    echo "<td class='col-2'>" . $row->productName  . "</td>";
-    echo "<td class='col-2'>€ " . str_replace('.', ',', $row->productPrice)  . "</td>";
-    echo "<td class='col-2'><a href='./ProductsController/loadEditProduct/".$row->productId.'/'.$row->productName.'/'.$row->productPrice."'>Edit</a></td>";
-    echo "<td class='col-2'><a href='./ProductsController/deleteProduct/".$row->productId."'>Delete</a></td>";
-    echo "</tr>";
-  }
-
-?>
+  ?>
   </table>
+  <?php
+  for ($i = 1; $i <= $_SESSION["pages"]; $i++)
+  {
+   echo "<a href='./ProductsController/showProducts/$i'>". $i ."</a>" ."  " ;
+  }
+  ?>
 </div>

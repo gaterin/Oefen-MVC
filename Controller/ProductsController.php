@@ -12,10 +12,11 @@ class ProductsController
     $this->model = new Products(DSN,USER,PASS);
   }
 
-  public function showProducts()
+  public function showProducts($page)
   {
     $model = $this->model;
-    $products = $model->getAll();
+    $products = $model->getAll($page);
+    $this->getPages();
     loadView('Products', ['products' => $products]);
   }
 
@@ -61,6 +62,13 @@ class ProductsController
     $products = $model->sortProduct($sortBy);
     loadView('Products', ['products' => $products]);
     scrollDown();
+  }
+  public function getPages()
+  {
+    $model = $this->model;
+    $pages = $model->getPages();
+    $_SESSION["pages"] = $pages;
+
   }
 }
  ?>
